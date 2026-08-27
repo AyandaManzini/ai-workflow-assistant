@@ -49,7 +49,7 @@ export async function generateEmail(request: EmailRequest): Promise<EmailDraft> 
   await new Promise((resolve) => setTimeout(resolve, 550));
 
   const recipient = request.recipient.trim() || "there";
-  const firstName = recipient.split(/\s+/)[0];
+  const firstName = recipient.split(/\s+/)[0] ?? "there";
   const points = toPoints(request.context);
   const topic = points[0] ? titleCase(points[0].slice(0, 60)) : "Quick update";
 

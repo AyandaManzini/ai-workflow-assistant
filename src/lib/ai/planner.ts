@@ -56,7 +56,7 @@ export async function generatePlan(
 
   return sorted.map((task, index) => ({
     id: task.id,
-    slot: slots[index % slots.length],
+    slot: slots[index % slots.length] ?? "Unscheduled",
     task: task.title.trim(),
     priority: task.priority,
     focus: FOCUS_NOTES[task.priority],
