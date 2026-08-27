@@ -25,7 +25,7 @@ export const Route = createFileRoute("/chat")({
       },
     ],
   }),
-  component: Chatbot;
+  component: Chatbot,
 });
 
 const SUGGESTIONS = [
